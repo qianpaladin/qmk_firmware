@@ -53,16 +53,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LAYOUT_all( //6
         KC_ESC,         MEH(KC_1),MEH(KC_2),MEH(KC_3),MEH(KC_4),MEH(KC_5),MEH(KC_GRV),MEH(KC_6),MEH(KC_7),MEH(KC_8),MEH(KC_9),MEH(KC_0),MEH(KC_MINS),MEH(KC_EQL),MEH(KC_BSPC),
         KC_TAB,         MEH(KC_Q),MEH(KC_W),MEH(KC_E),MEH(KC_R),MEH(KC_T),MEH(KC_LBRC),MEH(KC_Y),MEH(KC_U),MEH(KC_I),MEH(KC_O),MEH(KC_P),           MEH(KC_QUOT),MEH(KC_BSLS),
-        MO(3),          MEH(KC_A),MEH(KC_S),MEH(KC_D),MEH(KC_F),MEH(KC_G),MEH(KC_RBRC),MEH(KC_H),MEH(KC_J),MEH(KC_K),MEH(KC_L),MEH(KC_SCLN),                      MEH(KC_ENT),
+        MO(7),          MEH(KC_A),MEH(KC_S),MEH(KC_D),MEH(KC_F),MEH(KC_G),MEH(KC_RBRC),MEH(KC_H),MEH(KC_J),MEH(KC_K),MEH(KC_L),MEH(KC_SCLN),                      MEH(KC_ENT),
         KC_LSFT,KC_LSFT,MEH(KC_Z),MEH(KC_X),MEH(KC_C),MEH(KC_V),MEH(KC_B),MEH(KC_SLSH),MEH(KC_N),MEH(KC_M),MEH(KC_COMM),MEH(KC_DOT),           KC_RSFT,MEH(KC_UP),MEH(KC_DEL),
-        KC_LCTL,KC_LALT,KC_LGUI,                                    KC_SPC,KC_SPC,KC_SPC,                                  MO(2),MO(3),MEH(KC_LEFT),MEH(KC_DOWN),MEH(KC_RGHT)
+        KC_LCTL,KC_LALT,KC_LGUI,                                    KC_SPC,KC_SPC,KC_SPC,                                  MO(6),MO(7),MEH(KC_LEFT),MEH(KC_DOWN),MEH(KC_RGHT)
     ),
 
     LAYOUT_all( //7
         TG(4),          MEH(KC_F1),MEH(KC_F2),MEH(KC_F3),MEH(KC_F4),MEH(KC_F5),HYPR(KC_GRV),MEH(KC_F6),MEH(KC_F7),MEH(KC_F8),MEH(KC_F9),MEH(KC_F10),MEH(KC_F11),MEH(KC_F12),HYPR(KC_BSPC),
         KC_TAB,         HYPR(KC_Q),HYPR(KC_W),HYPR(KC_E),HYPR(KC_R),HYPR(KC_T),HYPR(KC_LBRC),HYPR(KC_Y),HYPR(KC_U),HYPR(KC_I),HYPR(KC_O),HYPR(KC_P),          HYPR(KC_QUOT),HYPR(KC_BSLS),
-        MO(3),          HYPR(KC_A),HYPR(KC_S),HYPR(KC_D),HYPR(KC_F),HYPR(KC_G),HYPR(KC_RBRC),HYPR(KC_H),HYPR(KC_J),HYPR(KC_K),HYPR(KC_L),HYPR(KC_SCLN),                      HYPR(KC_ENT),
+        MO(7),          HYPR(KC_A),HYPR(KC_S),HYPR(KC_D),HYPR(KC_F),HYPR(KC_G),HYPR(KC_RBRC),HYPR(KC_H),HYPR(KC_J),HYPR(KC_K),HYPR(KC_L),HYPR(KC_SCLN),                      HYPR(KC_ENT),
         KC_LSFT,KC_LSFT,HYPR(KC_Z),HYPR(KC_X),HYPR(KC_C),HYPR(KC_V),HYPR(KC_B),HYPR(KC_SLSH),HYPR(KC_N),HYPR(KC_M),HYPR(KC_COMM),HYPR(KC_DOT),      KC_RSFT,LCTL(LGUI(KC_Q)),HYPR(KC_DEL),
-        KC_LCTL,KC_LALT,KC_LGUI,                                    KC_SPC,KC_SPC,KC_SPC,                                  MO(3),MO(3),         HYPR(KC_LEFT),HYPR(KC_DOWN),HYPR(KC_RGHT)
-    ),
+        KC_LCTL,KC_LALT,KC_LGUI,                                    KC_SPC,KC_SPC,KC_SPC,                                  MO(7),MO(7),         HYPR(KC_LEFT),HYPR(KC_DOWN),HYPR(KC_RGHT)
+    )
 };
