@@ -1,8 +1,10 @@
 #include QMK_KEYBOARD_H
 
 enum custom_keycodes {
-    PASSWD1 = SAFE_RANGE,
-    PASSWD2 = SAFE_RANGE,
+    PASSWD1=SAFE_RANGE,
+    PASSWD2,
+    PASSWD3,
+    PASSWD4,
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -16,6 +18,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         break;
     case PASSWD2:
+        if (record->event.pressed) {
+            // when keycode QMKBEST is pressed
+            SEND_STRING("");
+        } else {
+            // when keycode QMKBEST is released
+        }
+        break;
+    case PASSWD3:
+        if (record->event.pressed) {
+            // when keycode QMKBEST is pressed
+            SEND_STRING("");
+        } else {
+            // when keycode QMKBEST is released
+        }
+        break;
+    case PASSWD4:
         if (record->event.pressed) {
             // when keycode QMKBEST is pressed
             SEND_STRING("");
@@ -41,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,         KC_F1,KC_F2,KC_F3,KC_F4,KC_F5,KC_GRAVE,KC_F6,KC_F7,KC_F8,KC_F9,KC_F10,KC_F11,KC_F12,   KC_BSPC,
         RGB_TOG,        RGB_RMOD,RGB_MOD,RGB_SAD,RGB_SAI,KC_NO,KC_NO,KC_NO,KC_NO,KC_PSCR,KC_SLCK,KC_PAUS,KC_NO,KC_BSLS,
         MO(3),          RGB_HUD,RGB_HUI,RGB_SPD,RGB_SPI,RGB_TOG,KC_NO,KC_HOME,KC_PGDN,KC_PGUP,KC_END,KC_INS,   KC_MPLY,
-        KC_LSFT,KC_LSFT,RGB_VAD,RGB_VAI,RGB_VAD,RGB_VAI,KC_NO,KC_NO,KC_NO,KC_NO,KC_HOME,KC_END,KC_RSFT,KC_VOLU,KC_MUTE,
+        KC_LSFT,KC_LSFT,RGB_VAD,RGB_VAI,RGB_VAD,RGB_VAI,KC_NO,KC_NO,KC_NO,KC_NO,KC_HOME,KC_END,LCTL(LGUI(KC_Q)),KC_VOLU,KC_MUTE,
         KC_LCTL,KC_LALT,KC_LGUI,                 KC_SPC,KC_SPC,KC_SPC,               MO(3),MO(1),KC_MPRV,KC_VOLD,KC_MNXT
     ),
 
@@ -56,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LAYOUT_all( //3
         TG(4),          MEH(KC_1),MEH(KC_2),MEH(KC_3),MEH(KC_4),MEH(KC_5),HYPR(KC_GRV),MEH(KC_6),MEH(KC_7),MEH(KC_8),MEH(KC_9),MEH(KC_0),MEH(KC_MINS),MEH(KC_EQL),HYPR(KC_BSPC),
         KC_TAB,         HYPR(KC_Q),HYPR(KC_W),HYPR(KC_E),HYPR(KC_R),HYPR(KC_T),HYPR(KC_LBRC),HYPR(KC_Y),HYPR(KC_U),HYPR(KC_I),HYPR(KC_O),HYPR(KC_P),          HYPR(KC_SCLN),HYPR(KC_BSLS),
-        MO(3),          HYPR(KC_A),HYPR(KC_S),HYPR(KC_D),HYPR(KC_F),HYPR(KC_G),HYPR(KC_RBRC),HYPR(KC_H),HYPR(KC_J),HYPR(KC_K),HYPR(KC_L),HYPR(KC_QUOT),                      HYPR(KC_ENT),
+        MO(3),          PASSWD1,PASSWD2,PASSWD3,PASSWD4,HYPR(KC_G),HYPR(KC_RBRC),HYPR(KC_H),HYPR(KC_J),HYPR(KC_K),HYPR(KC_L),HYPR(KC_QUOT),                      HYPR(KC_ENT),
         KC_LSFT,KC_LSFT,HYPR(KC_Z),HYPR(KC_X),HYPR(KC_C),HYPR(KC_V),HYPR(KC_B),HYPR(KC_SLSH),HYPR(KC_N),HYPR(KC_M),HYPR(KC_COMM),HYPR(KC_DOT),      KC_RSFT,LCTL(LGUI(KC_Q)),HYPR(KC_DEL),
         KC_LCTL,KC_LALT,KC_LGUI,                                    KC_SPC,KC_SPC,KC_SPC,                                  MO(3),MO(3),         HYPR(KC_LEFT),HYPR(KC_DOWN),HYPR(KC_RGHT)
     ),
@@ -73,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,         KC_F1,KC_F2,KC_F3,KC_F4,KC_F5,KC_GRAVE,KC_F6,KC_F7,KC_F8,KC_F9,KC_F10,KC_F11,KC_F12,   KC_BSPC,
         RGB_TOG,        RGB_RMOD,RGB_MOD,RGB_SAD,RGB_SAI,KC_NO,KC_NO,KC_NO,KC_NO,KC_PSCR,KC_SLCK,KC_PAUS,KC_NO,KC_BSLS,
         MO(7),          RGB_HUD,RGB_HUI,RGB_SPD,RGB_SPI,RGB_TOG,KC_NO,KC_HOME,KC_PGDN,KC_PGUP,KC_END,KC_INS,   KC_MPLY,
-        KC_LSFT,KC_LSFT,RGB_VAD,RGB_VAI,RGB_VAD,RGB_VAI,KC_NO,KC_NO,KC_NO,KC_NO,KC_HOME,KC_END,KC_RSFT,KC_VOLU,KC_MUTE,
+        KC_LSFT,KC_LSFT,RGB_VAD,RGB_VAI,RGB_VAD,RGB_VAI,KC_NO,KC_NO,KC_NO,KC_NO,KC_HOME,KC_END,LCTL(LGUI(KC_Q)),KC_VOLU,KC_MUTE,
         KC_LCTL,KC_LALT,KC_LGUI,                 KC_SPC,KC_SPC,KC_SPC,               MO(7),MO(5),KC_MPRV,KC_VOLD,KC_MNXT
     ),
 
@@ -86,9 +104,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     LAYOUT_all( //7
-        TG(4),          MEH(KC_F1),MEH(KC_F2),MEH(KC_F3),MEH(KC_F4),MEH(KC_F5),HYPR(KC_GRV),MEH(KC_F6),MEH(KC_F7),MEH(KC_F8),MEH(KC_F9),MEH(KC_F10),MEH(KC_F11),MEH(KC_F12),HYPR(KC_BSPC),
+        TG(4),          MEH(KC_1),MEH(KC_2),MEH(KC_3),MEH(KC_4),MEH(KC_5),HYPR(KC_GRV),MEH(KC_6),MEH(KC_7),MEH(KC_8),MEH(KC_9),MEH(KC_0),MEH(KC_MINS),MEH(KC_EQL),HYPR(KC_BSPC),
         KC_TAB,         HYPR(KC_Q),HYPR(KC_W),HYPR(KC_E),HYPR(KC_R),HYPR(KC_T),HYPR(KC_LBRC),HYPR(KC_Y),HYPR(KC_U),HYPR(KC_I),HYPR(KC_O),HYPR(KC_P),          HYPR(KC_SCLN),HYPR(KC_BSLS),
-        MO(7),          HYPR(KC_A),HYPR(KC_S),HYPR(KC_D),HYPR(KC_F),HYPR(KC_G),HYPR(KC_RBRC),HYPR(KC_H),HYPR(KC_J),HYPR(KC_K),HYPR(KC_L),HYPR(KC_QUOT),                      HYPR(KC_ENT),
+        MO(7),          PASSWD1,PASSWD2,PASSWD3,PASSWD4,HYPR(KC_G),HYPR(KC_RBRC),HYPR(KC_H),HYPR(KC_J),HYPR(KC_K),HYPR(KC_L),HYPR(KC_QUOT),                      HYPR(KC_ENT),
         KC_LSFT,KC_LSFT,HYPR(KC_Z),HYPR(KC_X),HYPR(KC_C),HYPR(KC_V),HYPR(KC_B),HYPR(KC_SLSH),HYPR(KC_N),HYPR(KC_M),HYPR(KC_COMM),HYPR(KC_DOT),      KC_RSFT,LCTL(LGUI(KC_Q)),HYPR(KC_DEL),
         KC_LCTL,KC_LALT,KC_LGUI,                                    KC_SPC,KC_SPC,KC_SPC,                                  MO(7),MO(7),         HYPR(KC_LEFT),HYPR(KC_DOWN),HYPR(KC_RGHT)
     )
